@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+Main-Class: expeditors.week01.solutions.task01.Bio
