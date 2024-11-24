@@ -5,6 +5,14 @@ public class Ingredient {
     private String measureType;
     private String name;
 
+    public Ingredient() {}
+
+    public Ingredient(final double amount, final String measureType, final String name) {
+        this.amount = amount;
+        this.measureType = measureType;
+        this.name = name;
+    }
+
     public double getAmount() {
         return amount;
     }
@@ -20,7 +28,6 @@ public class Ingredient {
     public void setMeasureType(String measureType) {
         this.measureType = measureType;
     }
-
 
     public String getName() {
         return name;

@@ -19,10 +19,10 @@ public class Recipe {
         String yieldDisplay = String.format("%d Cookies", yield);
 
         ArrayList<Ingredient> subsetOfIngredients = new ArrayList<>();
-        var shortening = new Ingredient();
-        shortening.setAmount(1.0);
-        shortening.setMeasureType(CUP_MEASURE_TYPE);
-        shortening.setName("Butter Flavored Shortening");
+        var shortening = new Ingredient(1.0, CUP_MEASURE_TYPE, "Butter Flavored Shortening");
+//        shortening.setAmount(1.0);
+//        shortening.setMeasureType(CUP_MEASURE_TYPE);
+//        shortening.setName("Butter Flavored Shortening");
         subsetOfIngredients.add(shortening);
         var whiteSugar = new Ingredient();
         whiteSugar.setAmount(0.75);

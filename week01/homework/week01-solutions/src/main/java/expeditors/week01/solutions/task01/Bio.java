@@ -10,9 +10,10 @@ public class Bio {
         String fullName = String.format("%s %s", firstName, lastName);
 
         System.out.printf("%s\n", fullName);
-        for (var counter = 0; counter < fullName.length(); counter++) {
-            System.out.print("-");
-        }
+        System.out.println("-".repeat(fullName.length()));
+//        for (var counter = 0; counter < fullName.length(); counter++) {
+//            System.out.print("-");
+//        }
         System.out.println();
         System.out.printf("Favorite Food: %s\n", favoriteFood);
         System.out.println("Hobbies:");
