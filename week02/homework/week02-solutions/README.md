@@ -36,7 +36,7 @@ Do you want to enter another (y/n)? n
 
 <u>Task 03</u>
 
-* Create a Java application that prompts the user for an integer test score in the range 0-100 and then assigns a letter grade (A-F).  The scoring criteria is 90-100 is an A, 80-89 is a B, 70-79 is a C, 60-79 is a D, and under 60 is an F.  An example trace of your program's console might be:
+* Create a Java application that prompts the user for an integer test score in the range 0-100 and then assigns a letter grade (A-F).  The scoring criteria is 90-100 is an A, 80-89 is a B, 70-79 is a C, 60-69 is a D, and under 60 is an F.  An example trace of your program's console might be:
 
 ```
 Enter a test score: 82

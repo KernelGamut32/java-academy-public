@@ -30,9 +30,9 @@ public class Calculator {
 
             DecimalFormat df = new DecimalFormat("#.###");
             System.out.printf("%s + %s = %s\n", operand1, operand2, df.format(sum));
-            System.out.printf("%s - %s = %s\n", operand2, operand1, df.format(difference));
-            System.out.printf("%s * %s = %s\n", operand2, operand1, df.format(product));
-            System.out.printf("%s / %s = %s\n", operand2, operand1, df.format(quotient));
+            System.out.printf("%s - %s = %s\n", operand1, operand2, df.format(difference));
+            System.out.printf("%s * %s = %s\n", operand1, operand2, df.format(product));
+            System.out.printf("%s / %s = %s\n", operand1, operand2, df.format(quotient));
         }
     }
 
@@ -44,7 +44,7 @@ public class Calculator {
         do {
             inputIsValid = true;
             System.out.print(prompt);
-            if (!in.hasNextDouble()) {
+            if (!in.hasNextBigDecimal()) {
                 inputIsValid = false;
                 in.next();
             } else {
