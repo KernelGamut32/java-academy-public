@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+Main-Class: expeditors.week04.solutions.employees.app.EmployeeApp
