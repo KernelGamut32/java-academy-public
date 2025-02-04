@@ -2,10 +2,9 @@ package expeditors.spring.factory;
 
 import org.junit.jupiter.api.Test;
 
-class FactoryExampleApplicationTests {
+class FactoryExampleSpApplicationTests {
 
 	@Test
 	void contextLoads() {
 	}
-
 }
