@@ -12,7 +12,13 @@ import ttl.larku.service.StudentService;
 public class RegistrationApp {
 
    public static void main(String[] args) {
-      // Set ApplicationContext
+      try (AnnotationConfigApplicationContext context =
+                   new AnnotationConfigApplicationContext()) {
+         context.getEnvironment().setActiveProfiles("production");
+         context.scan("ttl.larku");
+         context.refresh();
+         basic(context);
+      }
    }
 
    public static void basic(ApplicationContext appContext) {
