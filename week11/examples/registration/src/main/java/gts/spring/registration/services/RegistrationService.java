@@ -40,6 +40,8 @@ public class RegistrationService {
                 if (scheduledClass.getStartDate().equals(startDate)) {
                     scheduledClass.addStudent(student);
                     student.addClass(scheduledClass);
+                    scheduledClassService.updateScheduledClass(scheduledClass);
+                    studentService.updateStudent(student);
                     return true;
                 }
             }
@@ -54,6 +56,8 @@ public class RegistrationService {
             if (scheduledClass.getStartDate().equals(startDate)) {
                 scheduledClass.removeStudent(student);
                 student.dropClass(scheduledClass);
+                scheduledClassService.updateScheduledClass(scheduledClass);
+                studentService.updateStudent(student);
                 return true;
             }
         }
