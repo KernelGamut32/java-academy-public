@@ -1,0 +1,29 @@
+package gts.spring.employees.domain;
+
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+@Getter
+@Setter
+@SuperBuilder(toBuilder = true)
+@NoArgsConstructor
+public class HourlyEmployee extends Employee {
+    private double hoursWorked;
+    private double hourlyPayRate;
+
+    @Override
+    @JsonGetter("weeklyPay")
+    public BigDecimal calculateWeeklyPay() {
+        return new BigDecimal(hoursWorked * hourlyPayRate).setScale(2, RoundingMode.HALF_UP);
+    }
+
+    @JsonGetter("yearlyPay")
+    public BigDecimal calculateYearlyPay() {
+        return new BigDecimal(hoursWorked * hourlyPayRate * 52).setScale(2, RoundingMode.HALF_UP);
+    }
+}
