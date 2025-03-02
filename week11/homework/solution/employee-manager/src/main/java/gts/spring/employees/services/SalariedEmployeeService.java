@@ -1,7 +1,6 @@
 package gts.spring.employees.services;
 
-import gts.spring.employees.dao.BaseDAO;
-import gts.spring.employees.domain.Employee;
+import gts.spring.employees.dao.inmemory.InMemoryEmployeeDAO;
 import gts.spring.employees.domain.SalariedEmployee;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,7 +12,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class SalariedEmployeeService {
 
-    private final BaseDAO<SalariedEmployee> salariedEmployeeDAO;
+    private final InMemoryEmployeeDAO<SalariedEmployee> salariedEmployeeDAO;
 
     public SalariedEmployee createEmployee(SalariedEmployee employee) {
         return salariedEmployeeDAO.insert(employee);

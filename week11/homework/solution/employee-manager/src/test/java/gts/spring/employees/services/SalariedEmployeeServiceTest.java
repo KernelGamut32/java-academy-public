@@ -1,6 +1,6 @@
 package gts.spring.employees.services;
 
-import gts.spring.employees.dao.BaseDAO;
+import gts.spring.employees.dao.inmemory.InMemoryEmployeeDAO;
 import gts.spring.employees.domain.SalariedEmployee;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
@@ -28,7 +28,7 @@ public class SalariedEmployeeServiceTest {
     private SalariedEmployeeService salariedEmployeeService;
 
     @Mock
-    private BaseDAO<SalariedEmployee> salariedEmployeeDAO;
+    private InMemoryEmployeeDAO<SalariedEmployee> salariedEmployeeDAO;
 
     @BeforeEach
     public void setUp() {
