@@ -41,7 +41,7 @@ public class HourlyEmployeeController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCourse(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteHourlyEmployee(@PathVariable Long id) {
         boolean result = hourlyEmployeeService.deleteEmployee(id);
         return result ? ResponseEntity.accepted().build() : ResponseEntity.notFound().build();
     }
