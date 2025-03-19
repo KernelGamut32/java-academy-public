@@ -28,10 +28,6 @@ public class CreatorService {
 
     @Transactional
     public Creator saveCreator(Creator creator) {
-        creator.getGames().forEach(game -> {
-            game.getCreators().add(creator);
-            videoGameRepository.save(game);
-        });
         return creatorRepository.save(creator);
     }
 
