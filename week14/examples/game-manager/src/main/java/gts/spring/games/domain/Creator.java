@@ -27,9 +27,4 @@ public class Creator extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "game_id")
     )
     private List<VideoGame> games = new ArrayList<>();
-
-    public void removeGame(VideoGame game) {
-        this.games.remove(game);
-        game.getCreators().remove(this);
-    }
 }

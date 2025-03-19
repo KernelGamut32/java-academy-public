@@ -28,10 +28,14 @@ public class VideoGameService {
 
     @Transactional
     public VideoGame saveVideoGame(VideoGame videoGame) {
-        videoGame.getCreators().forEach(creator -> {
+        List<Creator> creators = new ArrayList<>(videoGame.getCreators());
+        videoGame.getCreators().clear();
+
+        for (Creator creator : creators) {
             creator.getGames().add(videoGame);
             creatorRepository.save(creator);
-        });
+            videoGame.getCreators().add(creator);
+        }
         return videoGameRepository.save(videoGame);
     }
 

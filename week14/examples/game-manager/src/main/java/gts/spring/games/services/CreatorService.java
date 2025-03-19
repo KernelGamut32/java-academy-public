@@ -39,10 +39,6 @@ public class CreatorService {
     public void deleteCreator(Long id) {
         var creatorReference = creatorRepository.findById(id);
         if (creatorReference.isPresent()) {
-            Creator creator = creatorReference.get();
-            for (VideoGame videoGame : new ArrayList<>(creator.getGames())) {
-                creator.removeGame(videoGame);
-            }
             creatorRepository.deleteById(id);
         }
     }
