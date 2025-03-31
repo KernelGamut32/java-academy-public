@@ -1,0 +1,70 @@
+### POST request to create new attendee
+POST http://localhost:8080/api/attendees
+accept: */*
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "email": "jane.doe@example.com"
+}
+###
+
+### POST request to create new attendee
+POST http://localhost:8080/api/attendees
+accept: */*
+Content-Type: application/json
+
+{
+  "name": "Bob Roberts",
+  "email": "bob.roberts@example.com"
+}
+###
+
+### POST request to create new attendee
+POST http://localhost:8080/api/attendees
+accept: */*
+Content-Type: application/json
+
+{
+  "name": "Charlie Charles",
+  "email": "charlie.charles@example.com"
+}
+###
+
+### POST request to create new attendee
+POST http://localhost:8080/api/attendees
+accept: */*
+Content-Type: application/json
+
+{
+  "name": "Delete Me",
+  "email": "delete.me@example.com"
+}
+###
+
+### PUT request to update existing attendee
+PUT http://localhost:8080/api/attendees/2
+accept: */*
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "Bob Robertson",
+  "email": "bob.robertson@example.com"
+}
+###
+
+### GET request to retrieve attendee by ID
+GET http://localhost:8080/api/attendees/2
+accept: */*
+###
+
+### DELETE request to delete existing attendee
+DELETE http://localhost:8080/api/attendees/4
+accept: */*
+###
+
+### GET request to retrieve all attendees
+GET http://localhost:8080/api/attendees
+accept: */*
+###

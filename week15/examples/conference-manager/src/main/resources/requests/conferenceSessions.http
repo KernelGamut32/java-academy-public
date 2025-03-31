@@ -1,0 +1,231 @@
+### POST request to create new conference session
+POST http://localhost:8080/api/sessions
+accept: */*
+Content-Type: application/json
+
+{
+  "title": "Intro to Spring Boot",
+  "description": "Introduction to multiple Spring Boot topics",
+  "startTime": "2025-04-01T12:00:00",
+  "endTime": "2025-04-01T16:00:00"
+}
+###
+
+### POST request to create new conference session
+POST http://localhost:8080/api/sessions
+accept: */*
+Content-Type: application/json
+
+{
+  "title": "Spring Boot Deep Dive",
+  "description": "Exploring advanced Spring Boot topics",
+  "startTime": "2025-04-03T12:00:00.000Z",
+  "endTime": "2025-04-03T16:00:00.000Z"
+}
+###
+
+### POST request to create new conference session
+POST http://localhost:8080/api/sessions
+accept: */*
+Content-Type: application/json
+
+{
+  "title": "Intro to .NET",
+  "description": "Introduction to multiple .NET topics",
+  "startTime": "2025-04-08T08:00:00.000Z",
+  "endTime": "2025-04-08T16:00:00.000Z"
+}
+###
+
+### POST request to create new conference session
+POST http://localhost:8080/api/sessions
+accept: */*
+Content-Type: application/json
+
+{
+  "title": "Delete Me",
+  "description": "Session that nobody wants",
+  "startTime": "2025-04-11T08:00:00.000Z",
+  "endTime": "2025-04-11T16:00:00.000Z"
+}
+###
+
+### GET request to retrieve all conference sessions
+GET http://localhost:8080/api/sessions
+accept: */*
+###
+
+### PUT request to update an existing conference session
+PUT http://localhost:8080/api/sessions/3
+accept: */*
+Content-Type: application/json
+
+{
+  "id": 3,
+  "title": "Intro to .NET",
+  "description": "Introduction to multiple .NET topics",
+  "startTime": "2025-04-08T08:00:00.000Z",
+  "endTime": "2025-04-08T12:00:00.000Z"
+}
+###
+
+### GET request to retrieve conference session by ID
+GET http://localhost:8080/api/sessions/3
+accept: */*
+###
+
+### POST request to assign a presenter to a session
+POST http://localhost:8080/api/sessions/1/presenters/1
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### POST request to assign a presenter to a session
+POST http://localhost:8080/api/sessions/1/presenters/2
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### POST request to assign a presenter to a session
+POST http://localhost:8080/api/sessions/2/presenters/2
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### POST request to assign a presenter to a session
+POST http://localhost:8080/api/sessions/3/presenters/1
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### POST request to assign a presenter to a session
+POST http://localhost:8080/api/sessions/3/presenters/3
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### POST request to assign a presenter to a session
+POST http://localhost:8080/api/sessions/4/presenters/3
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### POST request to register an attendee in a session
+POST http://localhost:8080/api/sessions/1/attendees/1
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### POST request to register an attendee in a session
+POST http://localhost:8080/api/sessions/1/attendees/2
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### POST request to register an attendee in a session
+POST http://localhost:8080/api/sessions/2/attendees/2
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### POST request to register an attendee in a session
+POST http://localhost:8080/api/sessions/3/attendees/1
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### POST request to register an attendee in a session
+POST http://localhost:8080/api/sessions/3/attendees/3
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### POST request to register an attendee in a session
+POST http://localhost:8080/api/sessions/4/attendees/3
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### GET request to retrieve conference session by ID
+GET http://localhost:8080/api/sessions/1
+accept: */*
+###
+
+### GET request to retrieve conference session by ID
+GET http://localhost:8080/api/sessions/2
+accept: */*
+###
+
+### GET request to retrieve conference session by ID
+GET http://localhost:8080/api/sessions/3
+accept: */*
+###
+
+### GET request to retrieve conference session by ID
+GET http://localhost:8080/api/sessions/4
+accept: */*
+###
+
+### GET request to retrieve all conference sessions assigned to a presenter ID
+GET http://localhost:8080/api/sessions/presenter/1
+accept: */*
+###
+
+### GET request to retrieve all conference sessions assigned to a presenter ID
+GET http://localhost:8080/api/sessions/presenter/2
+accept: */*
+###
+
+### GET request to retrieve all conference sessions assigned to a presenter ID
+GET http://localhost:8080/api/sessions/presenter/3
+accept: */*
+###
+
+### GET request to retrieve all conference sessions for which an attendee ID is registered
+GET http://localhost:8080/api/sessions/attendee/1
+accept: */*
+###
+
+### GET request to retrieve all conference sessions for which an attendee ID is registered
+GET http://localhost:8080/api/sessions/attendee/2
+accept: */*
+###
+
+### GET request to retrieve all conference sessions for which an attendee ID is registered
+GET http://localhost:8080/api/sessions/attendee/3
+accept: */*
+###
+
+### PUT request to update an existing conference session
+PUT http://localhost:8080/api/sessions/1
+accept: */*
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Introduction to Spring Boot",
+  "description": "Introduction to multiple Java and Spring Boot topics",
+  "startTime": "2025-04-01T12:30:00",
+  "endTime": "2025-04-01T16:30:00"
+}
+###
+
+### DELETE request to delete a conference session by ID
+DELETE http://localhost:8080/api/sessions/4
+accept: */*
+###
+
+### GET request to retrieve all conference sessions
+GET http://localhost:8080/api/sessions
+accept: */*
+###
+
+### DELETE request to delete existing attendee - confirm no FK violation
+DELETE http://localhost:8080/api/attendees/1
+accept: */*
+###
+
+### DELETE request to delete existing presenter - confirm no FK violation
+DELETE http://localhost:8080/api/presenters/1
+accept: */*
+###
