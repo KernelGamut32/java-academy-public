@@ -1,0 +1,62 @@
+### POST request to create new course
+POST http://localhost:8080/api/courses
+accept: */*
+Content-Type: application/json
+
+{
+  "title": "Introduction to Java",
+  "code": "J0001",
+  "credits": 3.5
+}
+###
+
+### POST request to create new course
+POST http://localhost:8080/api/courses
+accept: */*
+Content-Type: application/json
+
+{
+  "title": "Intermediate Spring Boot",
+  "code": "J0002",
+  "credits": 4.5
+}
+###
+
+### POST request to create new course
+POST http://localhost:8080/api/courses
+accept: */*
+Content-Type: application/json
+
+{
+  "title": "Advanced Basket Weaving",
+  "code": "D0001",
+  "credits": 1.0
+}
+###
+
+### PUT request to update existing course
+PUT http://localhost:8080/api/courses/2
+accept: */*
+Content-Type: application/json
+
+{
+  "title": "Intermediate Spring Boot",
+  "code": "J0002",
+  "credits": 5.5
+}
+###
+
+### GET request to retrieve course by ID
+GET http://localhost:8080/api/courses/2
+accept: */*
+###
+
+### DELETE request to delete course
+DELETE http://localhost:8080/api/courses/3
+accept: */*
+###
+
+### GET request to retrieve all courses
+GET http://localhost:8080/api/courses
+accept: */*
+###
