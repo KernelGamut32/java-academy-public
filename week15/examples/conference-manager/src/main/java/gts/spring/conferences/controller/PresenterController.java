@@ -29,7 +29,7 @@ public class PresenterController {
     @GetMapping("/{id}")
     public ResponseEntity<PresenterDTO> getPresenter(@PathVariable Long id) {
         var presenter = presenterService.findById(id);
-        return presenter != null ? ResponseEntity.ok(presenterService.findById(id)) : ResponseEntity.notFound().build();
+        return presenter != null ? ResponseEntity.ok(presenter) : ResponseEntity.notFound().build();
     }
 
     @Operation(summary = "Create a new presenter")

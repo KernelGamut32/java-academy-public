@@ -29,7 +29,7 @@ public class AttendeeController {
     @GetMapping("/{id}")
     public ResponseEntity<AttendeeDTO> getAttendee(@PathVariable Long id) {
         var attendee = attendeeService.findById(id);
-        return attendee != null ? ResponseEntity.ok(attendeeService.findById(id)) : ResponseEntity.notFound().build();
+        return attendee != null ? ResponseEntity.ok(attendee) : ResponseEntity.notFound().build();
     }
 
     @Operation(summary = "Create a new attendee")

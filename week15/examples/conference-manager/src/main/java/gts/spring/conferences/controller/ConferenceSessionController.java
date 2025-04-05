@@ -29,7 +29,7 @@ public class ConferenceSessionController {
     @GetMapping("/{id}")
     public ResponseEntity<ConferenceSessionDTO> getSessionById(@PathVariable Long id) {
         var session = sessionService.findById(id);
-        return session != null ? ResponseEntity.ok(sessionService.findById(id)) : ResponseEntity.notFound().build();
+        return session != null ? ResponseEntity.ok(session) : ResponseEntity.notFound().build();
     }
 
     @Operation(summary = "Create a new conference session")
@@ -57,7 +57,7 @@ public class ConferenceSessionController {
     @PostMapping("/{sessionId}/attendees/{attendeeId}")
     public ResponseEntity<ConferenceSessionDTO> registerAttendee(@PathVariable Long sessionId, @PathVariable Long attendeeId) {
         var session = sessionService.registerAttendee(sessionId, attendeeId);
-        return session != null ? ResponseEntity.ok(sessionService.registerAttendee(sessionId, attendeeId))
+        return session != null ? ResponseEntity.ok(session)
                 : ResponseEntity.notFound().build();
     }
 
@@ -65,7 +65,7 @@ public class ConferenceSessionController {
     @PostMapping("/{sessionId}/presenters/{presenterId}")
     public ResponseEntity<ConferenceSessionDTO> assignPresenter(@PathVariable Long sessionId, @PathVariable Long presenterId) {
         var session = sessionService.assignPresenter(sessionId, presenterId);
-        return session != null ? ResponseEntity.ok(sessionService.assignPresenter(sessionId, presenterId))
+        return session != null ? ResponseEntity.ok(session)
                 : ResponseEntity.notFound().build();
     }
 
