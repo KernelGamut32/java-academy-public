@@ -1,0 +1,132 @@
+### POST request to create new section of course (scheduled class)
+POST http://localhost:8080/api/classes
+accept: */*
+Content-Type: application/json
+
+{
+  "sectionName": "001A",
+  "startDate": "2025-04-01",
+  "endDate": "2025-04-30",
+  "course": {
+    "id": 1
+  }
+}
+###
+
+### POST request to create new section of same course (scheduled class)
+POST http://localhost:8080/api/classes
+accept: */*
+Content-Type: application/json
+
+{
+  "sectionName": "001B",
+  "startDate": "2025-05-01",
+  "endDate": "2025-05-31",
+  "course": {
+    "id": 1
+  }
+}
+###
+
+### POST request to create new section of same course (scheduled class) - for delete testing
+POST http://localhost:8080/api/classes
+accept: */*
+Content-Type: application/json
+
+{
+  "sectionName": "001D",
+  "startDate": "2025-05-01",
+  "endDate": "2025-05-31",
+  "course": {
+    "id": 1
+  }
+}
+###
+
+### PUT request to update existing section (scheduled class)
+PUT http://localhost:8080/api/classes/2
+accept: */*
+Content-Type: application/json
+
+{
+  "id": 2,
+  "sectionName": "002A",
+  "startDate": "2025-05-15",
+  "endDate": "2025-05-31",
+  "course": {
+    "id": 2
+  }
+}
+###
+
+### GET request to retrieve section of course (scheduled class) by ID
+GET http://localhost:8080/api/classes/2
+accept: */*
+###
+
+### DELETE request to delete section of course (scheduled class)
+DELETE http://localhost:8080/api/classes/3
+accept: */*
+###
+
+### GET request to retrieve all sections (scheduled classes)
+GET http://localhost:8080/api/classes
+accept: */*
+###
+
+### POST request to register a student for a section
+POST http://localhost:8080/api/classes/1/register/1
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### POST request to register a student for a section
+POST http://localhost:8080/api/classes/1/register/2
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### POST request to register a student for a section
+POST http://localhost:8080/api/classes/2/register/1
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### POST request to register a student for a section
+POST http://localhost:8080/api/classes/2/register/2
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### POST request to try registering same student for same section (repeat)
+POST http://localhost:8080/api/classes/2/register/2
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### DELETE request to delete student registered to a section (to verify no issues)
+DELETE http://localhost:8080/api/students/1
+accept: */*
+###
+
+### POST request to drop student from a section (scheduled class)
+POST http://localhost:8080/api/classes/1/drop/2
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### POST request to try dropping same student from same section (scheduled class)
+POST http://localhost:8080/api/classes/1/drop/2
+accept: */*
+Content-Type: application/x-www-form-urlencoded
+###
+
+### DELETE request to delete course associated to a section (to verify no issues)
+DELETE http://localhost:8080/api/courses/2
+accept: */*
+###
+
+### GET request to retrieve all sections (scheduled classes)
+GET http://localhost:8080/api/classes
+accept: */*
+###
