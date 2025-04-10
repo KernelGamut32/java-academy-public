@@ -1,5 +1,6 @@
 package gts.spring.registration.controller;
 
+import gts.spring.registration.dto.CondensedClassDTO;
 import gts.spring.registration.dto.ScheduledClassDTO;
 import gts.spring.registration.service.ScheduledClassService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -30,6 +31,13 @@ public class ScheduledClassController {
     public ResponseEntity<ScheduledClassDTO> getClass(@PathVariable Long id) {
         var scheduledClass = scheduledClassService.findById(id);
         return scheduledClass != null ? ResponseEntity.ok(scheduledClass) : ResponseEntity.notFound().build();
+    }
+
+    @Operation(summary = "Get condensed class details by ID")
+    @GetMapping("/condensed/{id}")
+    public ResponseEntity<CondensedClassDTO> getClassDetail(@PathVariable Long id) {
+        var condensedClassDetail = scheduledClassService.retrieveCondensedClassDetail(id);
+        return condensedClassDetail != null ? ResponseEntity.ok(condensedClassDetail) : ResponseEntity.notFound().build();
     }
 
     @Operation(summary = "Create a new scheduled class")

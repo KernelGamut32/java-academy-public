@@ -1,9 +1,11 @@
 package gts.spring.registration.service;
 
+import gts.spring.registration.dto.CondensedClassDTO;
 import gts.spring.registration.dto.ScheduledClassDTO;
 import gts.spring.registration.entity.Course;
 import gts.spring.registration.entity.ScheduledClass;
 import gts.spring.registration.entity.Student;
+import gts.spring.registration.mapper.CondensedClassMapper;
 import gts.spring.registration.mapper.ScheduledClassMapper;
 import gts.spring.registration.repository.CourseRepository;
 import gts.spring.registration.repository.ScheduledClassRepository;
@@ -17,15 +19,18 @@ public class ScheduledClassService extends CrudService<ScheduledClass, Scheduled
 
     private final StudentRepository studentRepository;
     private final CourseRepository courseRepository;
+    private final CondensedClassMapper condensedClassMapper;
 
     @Autowired
     public ScheduledClassService(ScheduledClassRepository repository,
-                                 ScheduledClassMapper mapper,
+                                 ScheduledClassMapper scheduledClassMapper,
                                  StudentRepository studentRepository,
-                                 CourseRepository courseRepository) {
-        super(repository, mapper);
+                                 CourseRepository courseRepository,
+                                 CondensedClassMapper condensedClassMapper) {
+        super(repository, scheduledClassMapper);
         this.studentRepository = studentRepository;
         this.courseRepository = courseRepository;
+        this.condensedClassMapper = condensedClassMapper;
     }
 
     @Override
@@ -56,6 +61,12 @@ public class ScheduledClassService extends CrudService<ScheduledClass, Scheduled
         if (scheduledClass == null || student == null) return null;
         scheduledClass.getStudents().remove(student);
         return getMapper().toDTO(getRepository().save(scheduledClass));
+    }
+
+    public CondensedClassDTO retrieveCondensedClassDetail(Long scheduledClassId) {
+        ScheduledClass scheduledClass = getRepository().findById(scheduledClassId).orElse(null);
+        if (scheduledClass == null) return null;
+        return condensedClassMapper.toDTO(scheduledClass);
     }
 
     private ScheduledClassDTO updateScheduledClassWithCourse(ScheduledClassDTO dto) {
