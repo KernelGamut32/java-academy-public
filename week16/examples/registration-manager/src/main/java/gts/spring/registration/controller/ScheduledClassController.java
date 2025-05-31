@@ -16,6 +16,7 @@ import java.util.List;
 @RequestMapping("/api/classes")
 @Tag(name = "Scheduled Classes", description = "Endpoints for managing Scheduled Classes")
 @RequiredArgsConstructor
+@CrossOrigin(maxAge =  3600)
 public class ScheduledClassController {
 
     private final ScheduledClassService scheduledClassService;

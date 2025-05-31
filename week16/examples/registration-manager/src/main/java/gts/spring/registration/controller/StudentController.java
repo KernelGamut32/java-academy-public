@@ -15,6 +15,7 @@ import java.util.List;
 @RequestMapping("/api/students")
 @Tag(name = "Students", description = "Endpoints for managing Students")
 @RequiredArgsConstructor
+@CrossOrigin(maxAge =  3600)
 public class StudentController {
 
     private final StudentService studentService;
